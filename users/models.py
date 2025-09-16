@@ -1,5 +1,5 @@
 from django.db import models
-from customer.models import Customer
+#from customer.models import Customer
 
 class Profile(models.Model):
     profileid = models.AutoField(primary_key=True)
@@ -21,7 +21,7 @@ class User(models.Model):
     fullname = models.CharField(max_length=255)
     profile = models.ForeignKey(Profile, on_delete=models.DO_NOTHING, db_column='profileID')
     #customer_id = models.CharField(max_length=50, null=True)
-    customer = models.ForeignKey(Customer,on_delete=models.DO_NOTHING, db_column='customer_id')
+    #customer = models.ForeignKey(Customer,on_delete=models.DO_NOTHING, db_column='customer_id')
     status = models.BooleanField()
     created_by = models.IntegerField(null=True)
     created_at = models.DateTimeField(null=True)

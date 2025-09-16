@@ -20,7 +20,7 @@ class RegisterUserView(APIView):
                 password_hash=hashed.decode('utf-8'),
                 fullname=data["fullname"],
                 profile_id=data["profile_id"],
-                customer_id=data.get("customer_id"),
+                #customer_id=data.get("customer_id"),
                 status=True,
                 created_by=1,
                 created_at=timezone.now()
@@ -45,8 +45,8 @@ class LoginUserView(APIView):
                 "fullname": user.fullname,
                 "profileID": user.profile.profileid,
                 "profileName": user.profile.profilename,
-                "id" : user.customer.id,
-                "type" : user.customer.type
+                #"id" : user.customer.id,
+                #"type" : user.customer.type
             })
         else:
             return Response({"error": "Invalid username or password"}, status=400)
